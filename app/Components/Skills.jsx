@@ -51,7 +51,7 @@ const Skills = () => {
   ]
 
   return (
-    <div className='text-white '>
+    <div className='text-white'>
       <div className='text-7xl roboto-slab-600 text-gray-300 ml-[8%] tracking-wider'>Technologies i use</div>
       <section className='my-15 h-90 flex items-center no-scrollbar overflow-x-auto overflow-y-clip gap-20'>
         {skills.map(({ n, img, glow, shadow, fill, info }) => (
@@ -106,15 +106,10 @@ const Skills = () => {
           <span className='text-gray-400 text-xs'>,click for more info</span>
         </span>}
       </section>
-      {/* {skill.map((e)=>(
-        <section key={e.name} className={`${e.visible?"":"hidden"} text-2xl tracking-wider ubuntu-medium flex mx-auto  text-white backdrop-blur-xs w-[90%] h-[50%]`}>
-         {e.info}
-        </section>
-      ))} */}
-      <section className={`backdrop-brightness-150 backdrop-blur-xs p-5 rounded-2xl ${data.visible?"mx-20 opacity-100":"w-0 h-0 opacity-0 mx-auto"} my-10  transition-all flex flex-col justify-center gap-5 ease-in-out duration-500 text-2xl ubuntu-medium`}>
+      {data.visible&&<section className={`backdrop-brightness-150 backdrop-blur-xs p-5 rounded-2xl ${data.visible?"mx-20 opacity-100":" h-0 opacity-0 mx-auto"} mt-10  transition-all flex flex-col justify-center gap-5 duration-500 text-2xl ubuntu-medium`}>
         <section className='text-4xl text-sky-200 flex justify-center w-full'>{data.name}</section>
         <section className='flex justify-center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data.info}</section>
-      </section>
+      </section>}
     </div>
   )
 }

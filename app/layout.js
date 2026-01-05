@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ConnectedStars from "@/app/Components/BackgroundParticles";
+import Navbarhelper from "./Hooks/Navbarhelper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,11 @@ export default function RootLayout({ children }) {
 
         <ConnectedStars />
         <div className="relative z-10 ">
-          {children}
+          <Navbarhelper>
+
+            {children}
+          </Navbarhelper>
+
         </div>
 
 

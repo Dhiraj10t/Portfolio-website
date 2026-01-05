@@ -1,9 +1,15 @@
 "use client";
-import Navbar from "./Components/Navbar";
+
 import { useState,useEffect } from "react";
 import Hero from "@/app/Components/Hero";
 import Skills from "@/app/Components/Skills";
 import About from "./Components/About";
+import Education from "@/app/Components/Education";
+import UpNavbar from "./Components/UPNavbar";
+import DownNavbar from "./Components/DownNavbar";
+import LeftNavbar from "./Components/LeftNavbar";
+import RightNavbar from "./Components/RightNavbar";
+
 
 export default function Home() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -16,6 +22,10 @@ export default function Home() {
   }, []);
   return (
     <div className="text-white " >
+      <UpNavbar/>
+      <DownNavbar/> 
+      <LeftNavbar/>
+      <RightNavbar/>
       <div
         className="pointer-events-none fixed rounded-full blur-3xl opacity-60 bg-blue-900 transition-transform duration-100"
         style={{
@@ -29,6 +39,7 @@ export default function Home() {
         <Hero />
         <About/>
         <Skills/>
+        <Education/>
       </div>
       
     </div>
