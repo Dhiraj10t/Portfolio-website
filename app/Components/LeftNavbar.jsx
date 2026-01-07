@@ -1,10 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
+import { useNavbar } from '../Hooks/Navbarhelper'
 
 const LeftNavbar = () => {
+    const {handleLeft,Navbar}=useNavbar();
     return (
-        <div className="bg-white flex flex-col h-[70%] z-100  items-center top-1/2 -translate-y-1/2 left-5 text-black justify-between py-2 fixed w-10 rounded-md">
-            <section className='my-5 text-2xl flex flex-col font-bold justify-center'>
+        <div className={`${Navbar.left?"flex":"-translate-x-40 opacity-0"} transition-all duration-600 bg-white flex flex-col h-[70%] z-100  items-center top-1/2 -translate-y-1/2 left-5 text-black justify-between py-2 fixed w-10 rounded-md`}>
+            <section className=' text-2xl flex flex-col font-bold justify-center'>
+                <section onClick={(e)=>handleLeft("U")} className='cursor-pointer mb-3 flex justify-center border-b-2'>
+                    <svg className='mb-2' xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="-0.5 0 25 25" fill="none">
+                        <path d="M12 22.4199C17.5228 22.4199 22 17.9428 22 12.4199C22 6.89707 17.5228 2.41992 12 2.41992C6.47715 2.41992 2 6.89707 2 12.4199C2 17.9428 6.47715 22.4199 12 22.4199Z" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M8 13.8599L10.87 10.8C11.0125 10.6416 11.1868 10.5149 11.3815 10.4282C11.5761 10.3415 11.7869 10.2966 12 10.2966C12.2131 10.2966 12.4239 10.3415 12.6185 10.4282C12.8132 10.5149 12.9875 10.6416 13.13 10.8L16 13.8599" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </section>
                 <svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 24 24" fill="none">
                     <path opacity="0.4" d="M12.1207 12.78C12.0507 12.77 11.9607 12.77 11.8807 12.78C10.1207 12.72 8.7207 11.28 8.7207 9.50998C8.7207 7.69998 10.1807 6.22998 12.0007 6.22998C13.8107 6.22998 15.2807 7.69998 15.2807 9.50998C15.2707 11.28 13.8807 12.72 12.1207 12.78Z" stroke="#292D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     <path opacity="0.34" d="M18.7398 19.3801C16.9598 21.0101 14.5998 22.0001 11.9998 22.0001C9.39977 22.0001 7.03977 21.0101 5.25977 19.3801C5.35977 18.4401 5.95977 17.5201 7.02977 16.8001C9.76977 14.9801 14.2498 14.9801 16.9698 16.8001C18.0398 17.5201 18.6398 18.4401 18.7398 19.3801Z" stroke="#292D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -12,7 +20,7 @@ const LeftNavbar = () => {
                 </svg>
             </section>
             <section>
-                <ul className='flex flex-col gap-5 my-5 text-lg'>
+                <ul className='flex flex-col gap-5 text-lg'>
                     <li className='mx-auto'>
                         <Link href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" mirror-in-rtl="true">
@@ -30,6 +38,12 @@ const LeftNavbar = () => {
                             </svg>
                         </Link>
                     </li>
+                    <section onClick={()=>handleLeft("D")} className='cursor-pointer flex justify-center border-t-2'>
+                        <svg className='mt-2' xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="-0.5 0 25 25" fill="none">
+                            <path d="M12 22.4199C17.5228 22.4199 22 17.9428 22 12.4199C22 6.89707 17.5228 2.41992 12 2.41992C6.47715 2.41992 2 6.89707 2 12.4199C2 17.9428 6.47715 22.4199 12 22.4199Z" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M16 10.99L13.13 14.05C12.9858 14.2058 12.811 14.3298 12.6166 14.4148C12.4221 14.4998 12.2122 14.5437 12 14.5437C11.7878 14.5437 11.5779 14.4998 11.3834 14.4148C11.189 14.3298 11.0142 14.2058 10.87 14.05L8 10.99" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </section>
                 </ul>
             </section>
         </div>

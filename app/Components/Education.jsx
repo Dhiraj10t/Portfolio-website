@@ -12,7 +12,7 @@ const Education = () => {
       <div className="relative max-w-6xl mx-auto">
 
         {/* Vertical Line */}
-        <div className="absolute left-1/2 top-0 h-full w-[2px] bg-white -translate-x-1/2" />
+        <div className="absolute left-1/2 top-0 h-full w-1 bg-white -translate-x-1/2" />
 
         {/* Item 1 */}
         <div className="flex justify-start w-full mb-24 ">
