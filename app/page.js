@@ -9,6 +9,8 @@ import UpNavbar from "./Components/UPNavbar";
 import DownNavbar from "./Components/DownNavbar";
 import LeftNavbar from "./Components/LeftNavbar";
 import RightNavbar from "./Components/RightNavbar";
+import Projects from "./Components/Projects";
+import Contact from "./Components/Contact";
 
 
 export default function Home() {
@@ -40,6 +42,8 @@ export default function Home() {
         <About/>
         <Skills/>
         <Education/>
+        <Projects/>
+        <Contact/>
       </div>
       
     </div>

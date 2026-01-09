@@ -17,7 +17,7 @@ const UpNavbar = () => {
       </section>
       <section className='flex gap-5 mr-2'>
         <ul className='flex gap-5 mx-2 text-md'>
-          <li className=''><Link href="">Projects</Link></li>
+          <li><Link href="">Projects</Link></li>
           <li><Link href="">Contact</Link></li>
         </ul>
         <div className={` border-l-2 h-8 cursor-pointer flex items-center`} onClick={(e)=>handleUp("R")}>

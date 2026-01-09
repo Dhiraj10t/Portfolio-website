@@ -52,7 +52,7 @@ const Skills = () => {
 
   return (
     <div className='text-white'>
-      <div className='text-7xl roboto-slab-600 text-gray-300 ml-[8%] tracking-wider'>Technologies i use</div>
+      <div className='text-7xl roboto-slab-600 text-white border-b-2 p-2 mx-[8%] tracking-wider'>TECHNOLOGIES I USE</div>
       <section className='my-15 h-90 flex items-center no-scrollbar overflow-x-auto overflow-y-clip gap-20'>
         {skills.map(({ n, img, glow, shadow, fill, info }) => (
           <section key={n}

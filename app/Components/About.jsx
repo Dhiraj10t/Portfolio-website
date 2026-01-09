@@ -4,7 +4,7 @@ import React from 'react'
 const About = () => {
     return (
         <div className='w-full'>
-            <lable className="text-7xl z-1 tracking-widest ml-30 text-gray-300 flex roboto-slab-600 ">ABOUT ME</lable>
+            <lable className="text-7xl z-1 border-b-2 tracking-widest mx-30 p-2 text-white flex roboto-slab-600 ">ABOUT ME</lable>
             <div className='flex my-23'>
                 <div className='text-2xl z-1 mx-30 tracking-wider gap-2 flex flex-col ubuntu-regular'>
                     <p>I’m a Full Stack Developer with strong experience in the MERN stack, focused on building scalable, secure, and user-friendly web applications. I enjoy transforming ideas into real products by combining clean frontend design with efficient and reliable backend logic.</p>
