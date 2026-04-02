@@ -21,45 +21,36 @@ export default function ConnectedStars() {
       className="fixed inset-0 -z-10"
       init={particlesInit}
       options={{
-        fullScreen: { enable: true, zIndex: -1 },
         fpsLimit: 120,
         particles: {
           number: { value: 100, density: { enable: true, area: 1000 } },
-          color: { value: ["#ffffff"] },
+          color: { value: "#ffffff" },
           shape: { type: "star" },
           opacity: {
-            value: { min: 0.1, max: 1 },
+            value: 1,
+            random: { enable: true, minimumValue: 0.3 },
             animation: { enable: true, speed: 2, minimumValue: 0.3, sync: false },
           },
-          size: { value: { min: 1, max: 2 } },
+          size: { value: { min: 0.5, max: 2 } },
           move: {
             enable: true,
             speed: 0.5,
-            direction: "none",
             random: true,
             straight: false,
             outModes: { default: "out" },
           },
         },
         interactivity: {
-          detectsOn: "canvas",
           events: {
-            onHover: { enable: true, mode: "grab" },
+            onHover: { enable: true, mode: "grab" }, // optional hover effect
             onClick: { enable: false },
           },
           modes: {
             grab: {
-              distance: 150, // how far hover affects
+              distance: 200, 
               links: {
-                opacity: 2, // much brighter
-                color: "#ffffff", // enforce bright white
-                width: 1.5,    // slightly thicker
+                opacity: 1,
               },
-            },
-            attract: {
-              distance: 100,
-              duration: 0.3,
-              speed: 0.5,
             },
           },
         },
