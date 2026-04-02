@@ -5,9 +5,9 @@ import {
     FaEnvelope,
     FaDownload,
     FaLinkedin,
-    FaGithub,
-    FaInstagram,
+    FaGithub
 } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const Contact = () => {
     return (
@@ -43,10 +43,10 @@ const Contact = () => {
                             <p className="text-gray-300 mt-2">dhirajstorat10@gmail.com</p>
                         </div>
 
-                        <button className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg transition">
+                        <a href="/resume.pdf" download="Dhiraj_Thorat_resume.pdf" className="flex hover:cursor-pointer pointer-events-auto items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 w-60 py-3 rounded-lg transition">
                             <FaDownload />
                             DOWNLOAD RESUME
-                        </button>
+                        </a>
                     </div>
 
                     {/* RIGHT CARD */}
@@ -97,9 +97,9 @@ const Contact = () => {
                         <div className="mt-8">
                             <p className="text-gray-400 mb-2">Find me on</p>
                             <div className="flex gap-4 text-yellow-400 text-xl">
-                                <FaLinkedin className="cursor-pointer hover:text-yellow-500" />
-                                <FaGithub className="cursor-pointer hover:text-yellow-500" />
-                                <FaInstagram className="cursor-pointer hover:text-yellow-500" />
+                                <a href="https://www.linkedin.com/in/dhiraj-thorat-147678292/"><FaLinkedin className="cursor-pointer pointer-events-auto hover:text-yellow-500" /></a>
+                                <a href="https://github.com/Dhiraj10t"><FaGithub className="cursor-pointer pointer-events-auto hover:text-yellow-500" /></a>
+                                <a href="https://leetcode.com/u/dhirajThorat/"><SiLeetcode className="cursor-pointer pointer-events-auto hover:text-yellow-500" /></a>
                             </div>
                         </div>
                     </div>
