@@ -1,5 +1,5 @@
 "use client";
-
+import Head from 'next/head';
 import { useState,useEffect } from "react";
 import Hero from "@/app/Components/Hero";
 import Skills from "@/app/Components/Skills";
@@ -22,14 +22,17 @@ export default function Home() {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
-  return (
+  return <>
+    <Head>
+        <link rel="icon" href="/images.png" />
+    </Head>
     <div className="text-white " >
       <UpNavbar/>
       <DownNavbar/> 
       <LeftNavbar/>
       <RightNavbar/>
       <div
-        className="pointer-events-none fixed rounded-full blur-3xl opacity-60 bg-blue-900 transition-transform duration-100"
+        className="pointer-events-none -z-50 fixed rounded-full blur-3xl opacity-60 bg-blue-900 transition-transform duration-100"
         style={{
           width: "200px",
           height: "200px",
@@ -37,7 +40,7 @@ export default function Home() {
           top: position.y - 100,
         }}
       ></div>
-      <div className="pointer-events-none absolute inset-0 z-10 flex flex-col gap-10">
+      <div className=" min-w-screen w-screen overflow-clip z-100 ">
         <Hero />
         <About/>
         <Skills/>
@@ -47,5 +50,5 @@ export default function Home() {
       </div>
       
     </div>
-  );
+  </>
 }

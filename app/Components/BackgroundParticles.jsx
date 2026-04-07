@@ -1,60 +1,86 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
-export default function ConnectedStars() {
-  const [mounted, setMounted] = useState(false);
+export default function ParticlesBackground() {
+  const [init, setInit] = useState(false);
 
-  useEffect(() => setMounted(true), []);
-
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
-  if (!mounted) return null;
+  if (!init) return null;
 
   return (
     <Particles
       id="tsparticles"
-      className="fixed inset-0 -z-10"
-      init={particlesInit}
       options={{
-        fpsLimit: 120,
-        particles: {
-          number: { value: 100, density: { enable: true, area: 1000 } },
-          color: { value: "#ffffff" },
-          shape: { type: "star" },
-          opacity: {
-            value: 1,
-            random: { enable: true, minimumValue: 0.3 },
-            animation: { enable: true, speed: 2, minimumValue: 0.3, sync: false },
-          },
-          size: { value: { min: 0.5, max: 2 } },
-          move: {
-            enable: true,
-            speed: 0.5,
-            random: true,
-            straight: false,
-            outModes: { default: "out" },
-          },
+        fullScreen: {
+          enable: true,
+          zIndex: -1,
         },
         interactivity: {
           events: {
-            onHover: { enable: true, mode: "grab" }, // optional hover effect
-            onClick: { enable: false },
+            onHover: {
+              enable: true,
+              mode: "grab",
+            },
           },
           modes: {
             grab: {
-              distance: 200, 
+              distance: 150,
               links: {
-                opacity: 1,
+                opacity: 3,
               },
             },
           },
         },
-        detectRetina: true,
+        particles: {
+          number: {
+            value: 80,
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "star",
+          },
+          links: {
+            enable: false,
+            color: "#ffffff",
+            distance: 150,
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 1,
+          },
+          size: {
+            value: { min: 0.5, max: 2 },
+            animation: {
+              enable: true,
+              speed: 1,        // blinking speed
+              minimumValue: 0.1,
+              sync: false,     // each particle blinks differently (IMPORTANT)
+            },
+          },
+          opacity: {
+            value: { min: 0.5, max: 2 }, // random base opacity
+            animation: {
+              enable: true,
+              speed: 1,        // blinking speed
+              minimumValue: 0.1,
+              sync: false,     // each particle blinks differently (IMPORTANT)
+            },
+          },
+        },
       }}
     />
   );

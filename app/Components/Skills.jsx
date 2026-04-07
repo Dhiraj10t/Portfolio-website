@@ -52,8 +52,8 @@ const Skills = () => {
 
   return (
     <div className='text-white'>
-      <div className='text-7xl roboto-slab-600 text-white border-b-2 p-2 mx-[8%] tracking-wider'>TECHNOLOGIES I USE</div>
-      <section className='my-15 h-90 flex items-center no-scrollbar overflow-x-auto overflow-y-clip gap-20'>
+      <div className='lg:text-7xl md:text-5xl text-4xl roboto-slab-600 text-white border-b-2 p-2 lg:mx-30 mx-5 not-lg:flex not-lg:justify-center tracking-wider'>TECHNOLOGIES</div>
+      <section className='md:my-15 md:h-90 my-10 flex items-center no-scrollbar overflow-x-auto overflow-y-clip lg:gap-20 md:gap-20 gap-10'>
         {skills.map(({ n, img, glow, shadow, fill, info }) => (
           <section key={n}
             onMouseEnter={() => {
@@ -68,8 +68,8 @@ const Skills = () => {
           >
             <section
               onClick={(e) => handleclick(n, info)}
-              className={`group hover:cursor-pointer h-60 w-60 backdrop-brightness-150 backdrop-blur-xs relative z-10 pointer-events-auto rounded-full shrink-0 flex items-center justify-center 
-            ${n == "ReactJS" ? "ml-26" : ""}
+              className={`group hover:cursor-pointer md:h-60 md:w-60 h-40 w-40 backdrop-brightness-150 backdrop-blur-xs relative z-10 pointer-events-auto rounded-full shrink-0 flex items-center justify-center 
+            ${n == "ReactJS" ? "md:ml-26 ml-10" : ""}
             ${n == "Github" ? "mr-3" : ""}
             ${data.name==n?"border-2 border-[#FFD700]":""}
             hover:${shadow ? `hover:drop-shadow-xs` : `drop-shadow-xl`}
@@ -90,7 +90,7 @@ const Skills = () => {
             hover:${shadow == "shadow-orange-600" ? `shadow-md shadow-orange-600` : ``}
             hover:${shadow == "shadow-yellow-200" ? `shadow-md shadow-yellow-200` : ``}
             `}>
-              <img className={` z-1 ${fill ? "h-40" : "h-35"} ${n == "NextJS" ? "h-50 w-50" : ""}`} src={img} alt={n} />
+              <img className={` z-1 ${fill ? "md:h-40 h-30" : "md:h-35 h-20"} ${n == "NextJS" ? "md:h-50 md:w-50 h-30 w-30" : ""}`} src={img} alt={n} />
             </section>
           </section>
         ))}
@@ -106,8 +106,8 @@ const Skills = () => {
           <span className='text-gray-400 text-xs'>,click for more info</span>
         </span>}
       </section>
-      {data.visible&&<section className={`backdrop-brightness-150 backdrop-blur-xs p-5 rounded-2xl ${data.visible?"mx-20 opacity-100":" h-0 opacity-0 mx-auto"} mt-10  transition-all flex flex-col justify-center gap-5 duration-500 text-2xl ubuntu-medium`}>
-        <section className='text-4xl text-sky-200 flex justify-center w-full'>{data.name}</section>
+      {data.visible&&<section className={`backdrop-brightness-150 backdrop-blur-xs p-5 rounded-2xl ${data.visible?"md:mx-20 mx-10 opacity-100":" h-0 opacity-0 mx-auto"} mt-10 break-all text-justify transition-all flex flex-col justify-center gap-5 duration-500 text-2xl ubuntu-medium`}>
+        <section className='md:text-4xl text-3xl text-sky-200 flex justify-center w-full'>{data.name}</section>
         <section className='flex justify-center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{data.info}</section>
       </section>}
     </div>
